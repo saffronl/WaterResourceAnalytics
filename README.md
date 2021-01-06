@@ -12,10 +12,14 @@ The samples were collected by both the Philadelphia Water Department and Delawar
 There are multiple locations of CSO's along the riverbanks from where the bacteria was sampled. 
 Acceptable bacteria amounts for swimming is determined by the EPA.
 
+
+ReadingFromExcel.py
+  <li>
+  Start from this sheet.
+  </li>
 AddingRainData.py
 <li>
 </li>
-  
 DistributionTests.py
 <li>
 </li>
@@ -32,9 +36,6 @@ Histograms for Total Rainfall in Philly.py
 <li>
 </li>
 Percentiles.py
-<li>
-</li>
-ReadingFromExcel.py
 <li>
 </li>
 T-Test.py
