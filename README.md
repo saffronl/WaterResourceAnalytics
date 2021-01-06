@@ -14,9 +14,11 @@ Acceptable bacteria amounts for swimming is determined by the EPA.
 
 
 ReadingFromExcel.py
+<ul>
   <li>
   Start from this sheet.
   </li>
+</ul>
 AddingRainData.py
 <li>
 </li>
