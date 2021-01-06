@@ -1,55 +1,45 @@
 # Saffron Livaccari
+# Email saffron.livaccari@gmail.com for inquiries.
 
 import pandas as pd
 import numpy as np
 import statistics as st
-import datetime as dt
+#import datetime as dt
 
 ### Three Lines have to be changed - marked by ###
 
 # To make the important column names universal
-def ExcelSheet(file,ColumnNameforDate,ColumnNameforBacteria,ColumnNameforLocation,ColumnforData):
-    data = pd.read_excel(file)
-    df = pd.DataFrame(data)
-    df.rename(columns={ColumnNameforDate:'Date',ColumnNameforBacteria:'Bacteria',
-                         ColumnNameforLocation:'Location',ColumnforData:'Data'},inplace=True)
-    df = df.dropna(subset=['Date','Bacteria','Location','Data'])
-    df.to_excel('data.xlsx')
-    print('DataFrame is written to Excel File successfully.')
-    return df
+def universal_excelsheet(file, columnNameforDate, columnNameforBacteria, columnNameforLocation, columnforData):
+    exceldata = pd.read_excel(file)
+    exceldf = pd.DataFrame(exceldata)
+    exceldf.rename(columns={columnNameforDate: 'Date', columnNameforBacteria: 'Bacteria',
+                            columnNameforLocation: 'Location', columnforData: 'Data'}, inplace=True)
+    exceldf = exceldf.dropna(subset=['Date', 'Bacteria', 'Location', 'Data'])
+    exceldf.to_excel('data.xlsx')
+    return exceldf
 
 ### CHANGE THIS TO FIT EXCEL SHEET
-#DRBC
-excel = '/Users/saffron/Downloads/Nearshore_Bacteria.xlsx'
+#DRBC 2019
+#excel = '/Users/saffron/Downloads/Nearshore_Bacteria.xlsx'
 #PWD
 #excel = '/Users/saffron/Documents/Howard_Neukrug_Water_Center_PWD_Shore_Grab_Bacteria_2019.xlsx'
+#DRBC 2020
+excel = '/Users/saffron/Downloads/DRBC 2020 nearshore.xlsx'
+
+
 ### CHANGE THIS TO FIT THE COLUMNS NAMES OF ABOVE EXCEL SHEET
 #DRBC
-ExcelSheet(excel,'ActivityStartDate','CharacteristicName','Location','ResultMeasureValue')
+#ExcelSheet(excel,'ActivityStartDate','CharacteristicName','Location','ResultMeasureValue')
 #PWD
 #ExcelSheet(excel,'sample.date', 'parameter', 'loc.ID', 'data.value')
+#DRBC 2020
+universal_excelsheet(excel, 'CollectionDate', 'Parameter', 'SiteName', 'result')
 
 #Excel Sheet made from function
 data = pd.read_excel(r'/Users/saffron/PycharmProjects/PythonProject1/data.xlsx')
-#Excel sheet for the precipiation
-raindata = pd.read_excel(r'/Users/saffron/PycharmProjects/PythonProject1/RainData.xlsx')
-df1 = pd.DataFrame(raindata)
-
-def dataframe_to_dict(df, key_column, value_column):
-    dict = df.set_index(key_column)[value_column].to_dict()
-    return dict
-
-rain_dict = dataframe_to_dict(df1,'DATE','PRCP')
-TwoDays_dict = dataframe_to_dict(df1,'DATE','SumTwoDays')
-ThreeDays_dict = dataframe_to_dict(df1,'DATE','SumThreeDays')
-SixDays_dict = dataframe_to_dict(df1,'DATE','SumSixDays')
-TenDays_dict = dataframe_to_dict(df1,'DATE','SumTenDays')
-
 
 #### Create a pandas dataframe
 df = pd.DataFrame(data)
-df1 = pd.DataFrame(raindata)
-
 
 # Geometric Mean
 def geo_mean(iterable):
@@ -72,7 +62,8 @@ def average(iterable):
 # Create a list of lists for the bacteria, location, month, etc
 LIST = []
 
-# using the month, bacteria, and location, get the geometric mean
+# Uses the month, bacteria, and location, get the geometric mean, STV, average, and percentiles
+# and exports this information into a new pandas dataframe
 def pullingdata(month,year,bacteria,locationID):
     # Matching the correct columns with the parameters from the function
     DATA = (df.loc[(df['Date'].dt.month == (month))
@@ -153,12 +144,8 @@ exportingdata = exportingdata.append(pd.DataFrame(LIST, columns = exportingdata.
 
 ### CHANGE THIS TO NAME
 #file_name = 'PWDdata.xlsx'
-file_name = 'DRBC2data.xlsx'
+file_name = 'DRBC2020data.xlsx'
 
 # saving the excel
 exportingdata.to_excel(file_name)
 print('DataFrame is written to Excel File successfully.')
-
-
-
-
