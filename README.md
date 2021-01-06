@@ -15,7 +15,7 @@ Acceptable bacteria amounts for swimming is determined by the EPA.
 
 ReadingFromExcel.py
 <ul>
-  <li><b>Start from this sheet.</b></li>
+  <li><b>Start from this sheet</b></li>
   <li>Only have to change three lines</br>
   1. The excel file (excel = ......)</br>
   2. The column names in the above excel file (universal_excelsheet(Excel file, Column Name for Date, Column Name for Bacteria, Column Name for Location, Column for Data)</br>
@@ -41,16 +41,29 @@ ReadingFromExcel.py
   <li>Each list that is created from above is added as a row to a pandas dataframe.</li>
   <li>This dataframe is then exported into an excel sheet.</li>
 </ul>
+
 AddingRainData.py
 <ul>
-  <li><b>Start from this sheet.</b></li>
-  <li></li>
+  <li><b>Second sheet</b></li>
+  <li>Four lines to change are</br>
+  1. The excel file for the PWD or DRBC data (excel = ......)</br>
+  2. The column names in the above excel file (universal_excelsheet(Excel file, Column Name for Date, Column Name for Bacteria, Column Name for Location, Column for Data)</br>
+  3. The excel file for the rain data (excel2019 = .... , excel2020 = ....)
+  4. At the end of the script, change the file name to save the new excel sheet down to your computer. (file_name = ....)</br>
+  <li>Function universal_excelsheet does the same as from ReadingFromExcel.py</li>
+  <li>Function - RainExcelSheet - </br>
+  The column names will have to be changed to fit your excel sheet. This function creats the rolling sum of the precipitation for 2, 3, 6, and 10 days and counts the number of days it has been since a rainfall event of >.1. This function returns a new excel sheet called RainData for the date, the amount of precipitation for each date, the cumulative precipitation for 2, 3, 6, and 10 days, the count of days after .1 rainfall event.
+  </li>
+  <li>Function - dataframe_to_dict - </br>
+  This function creates a dictionary pair. The code after this function uses this function to create a dictionary pair for date and precipitation, date and sum for two days, ..., date and count of days after .1 rainfall event.
+  </li>
+  <li>DAILYLIST = (df['Date']) creates a list of all days in PWD or DRBC excel file.</li>
+  <li>The next block of code (for DateInList in DAILYLIST:) creates a list of every date in PWD or DRBC excel file with the dictionary paired precipitation amount, the cumulative sum for two days, ..., and the count of days after .1 rainfall event.</li>
+  <li>Next, (exportingrain = ...) creates a pandas data frame for every list created in the previous step.</li>
+  <li>Next, (exportingdata = ...) this combines the PWD or DRBC data frame with the rain data frame created in the previous step.</li>
+  <li>The data is saved down to an excel file.</li>
 </ul>
 DistributionTests.py
-<ul>
-  <li><b>Start from this sheet.</b></li>
-  <li></li>
-</ul>
 Graphing BoxPlot.py
 <li>
 </li>
