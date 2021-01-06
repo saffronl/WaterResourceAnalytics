@@ -38,7 +38,7 @@ ReadingFromExcel.py
   </li>
   <li>Next, the location, bacteria, and year is compiled and only the unique values are added to a list.</li>
   <li>The unique value lists from the previous step is used to loop through every bacteria (fecal, enterococci, and ecoli) at every location, for every month, for every year. The function pullingdata creates a unique list for each bacteria, location, month, and year.</li>
-  <li>Each list that is created from above is added as a row to a pandas datafram.</li>
+  <li>Each list that is created from above is added as a row to a pandas dataframe.</li>
   <li>This dataframe is then exported into an excel sheet.</li>
 </ul>
 AddingRainData.py
