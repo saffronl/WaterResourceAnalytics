@@ -15,16 +15,28 @@ Acceptable bacteria amounts for swimming is determined by the EPA.
 
 ReadingFromExcel.py
 <ul>
-  <li>
-  Start from this sheet.
+  <li><b>Start from this sheet.</b></li>
+  <li>Only have to change three lines</br>
+  1. The excel file (excel = ......)</br>
+  2. The column names in the above excel file (universal_excelsheet(Excel file, Column Name for Date, Column Name for Bacteria, Column Name for Location, Column for Data)</br>
+  3. At the end of the script, change the file name to save the new excel sheet down to your computer. (file_name = ....)</br>
   </li>
+  <li>First function -  universal_excelsheet - </br> 
+  This function takes in the raw PWD or DRBC excel sheet and changes the column names into a standard ('Date', 'Bacteria', 'Location', 'Data'), so the later functions do not have to change.
+  </li>
+  <li></li>
+  <li></li>
 </ul>
 AddingRainData.py
-<li>
-</li>
+<ul>
+  <li><b>Start from this sheet.</b></li>
+  <li></li>
+</ul>
 DistributionTests.py
-<li>
-</li>
+<ul>
+  <li><b>Start from this sheet.</b></li>
+  <li></li>
+</ul>
 Graphing BoxPlot.py
 <li>
 </li>
