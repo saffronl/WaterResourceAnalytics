@@ -10,5 +10,5 @@ rain on bacteria samples.</b>
 
 The samples were collected by both the Philadelphia Water Department and Delaware River Basin Commission for fecal coliform, enterococcus, and e.coli.
 There are multiple location of CSO's along the riverbanks from where the bacteria was sampled. 
-Acceptable bacteria amounts for swimming determined by the EPA.
+Acceptable bacteria amounts for swimming is determined by the EPA.
 
