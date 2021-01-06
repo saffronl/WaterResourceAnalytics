@@ -59,14 +59,23 @@ AddingRainData.py
   </li>
   <li>DAILYLIST = (df['Date']) creates a list of all days in PWD or DRBC excel file.</li>
   <li>The next block of code (for DateInList in DAILYLIST:) creates a list of every date in PWD or DRBC excel file with the dictionary paired precipitation amount, the cumulative sum for two days, ..., and the count of days after .1 rainfall event.</li>
-  <li>Next, (exportingrain = ...) creates a pandas data frame for every list created in the previous step.</li>
-  <li>Next, (exportingdata = ...) this combines the PWD or DRBC data frame with the rain data frame created in the previous step.</li>
+  <li>Next, (exportingrain = ...) creates a pandas dataframe for every list created in the previous step.</li>
+  <li>Next, (exportingdata = ...) combines the PWD or DRBC dataframe with the rain dataframe created in the previous step.</li>
   <li>The data is saved down to an excel file.</li>
 </ul>
 DistributionTests.py
+<ul>
+  <li>Read in your excel sheet (PWD or DRBC excel file)</li>
+  <li>Drop NA's from the imprtant columns (data, bacteria, date, and location)</li>
+  <li>Select all rows where bacteria = enterococci or ecoli (will have to manually change this)</li>
+  <li>Next, (for k in Data:) will create a list of all data values in the rows selected previously</li>
+  <li>(for i in list_of_dists:) will run through the lists of distributions and fit the data list (created previously) to each distribution.</li>
+  <li>(results.sort) will sort the p and statistic number to the lowest p and highest statistic number.</li>
+</ul>
 Graphing BoxPlot.py
-<li>
-</li>
+<ul>
+  <li></li>
+</ul>
 Graphing Histograms.py
 <li>
 </li>
