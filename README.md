@@ -63,6 +63,37 @@ AddingRainData.py
   <li>Next, (exportingdata = ...) combines the PWD or DRBC dataframe with the rain dataframe created in the previous step.</li>
   <li>The data is saved down to an excel file.</li>
 </ul>
+
+Graphing BoxPlot.py
+<ul>
+  <li>Takes the excel file created in AddingRainData.py and creates two boxplots for rain between 0 and .1 , and .1 to max rain.</li>
+  <li>Change the excel file path, column name for location, column name for bacteria depending on what is in the excel file.</li>
+  <li>Loops through unique locations and unique bacteria for the provided excel sheet</li>
+  <li>(while i < (len(rain)):) grabs the data values for the specified bacteria, location, and when rainfall is between a certain amount (in this case, when rainfall is between 0 and .1 , and .1 to max rain.)</li>
+  <li>The data is then plotted, with the title, x labels, and y label automatically set.</li>
+  <li>(x, y = stats.ttest_ind(list[0], list[1])) This line conducts the T Test.</li>
+</ul>
+
+Graphing Histograms.py
+<ul>
+  <li></li>
+</ul>
+
+GraphingGeoMean.py
+<ul>
+  <li></li>
+</ul>
+
+Histograms for Total Rainfall in Philly.py
+<ul>
+  <li></li>
+</ul>
+
+T-Test.py
+<ul>
+  <li></li>
+</ul>
+
 DistributionTests.py
 <ul>
   <li>Read in your excel sheet (PWD or DRBC excel file)</li>
@@ -72,22 +103,3 @@ DistributionTests.py
   <li>(for i in list_of_dists:) will run through the lists of distributions and fit the data list (created previously) to each distribution.</li>
   <li>(results.sort) will sort the p and statistic number to the lowest p and highest statistic number.</li>
 </ul>
-Graphing BoxPlot.py
-<ul>
-  <li></li>
-</ul>
-Graphing Histograms.py
-<li>
-</li>
-GraphingGeoMean.py
-<li>
-</li>
-Histograms for Total Rainfall in Philly.py
-<li>
-</li>
-Percentiles.py
-<li>
-</li>
-T-Test.py
-<li>
-</li>
