@@ -6,7 +6,7 @@ import numpy as np
 from scipy.stats import gmean
 import statistics as st
 
-# Dictionary of Target Values
+# Dictionary of Target Values for each bacteria
 targetGM = {"Fecal Coliform": 200, "Fecal coliform": 200, "Fecal\nColiform":200,
           "Enterococci": 35, "Enterococcus":35,
           "E.coli": 126, "E.Coli": 126, "Ecoli": 126, "Escherichia coli":126, "Escherichia\nColi":126,
@@ -16,7 +16,7 @@ targetSTV = {"Fecal Coliform": 770, "Fecal coliform": 770, "Fecal\nColiform":770
           "E.coli": 410, "E.Coli": 410, "Ecoli": 410, "Escherichia coli":410, "Escherichia\nColi":410,
           "Total Coliform": 770}
 
-def target_number(iterable, targetvalue):
+def target_number(iterable, targetvalue): # if the bacteria is greater than the target value, count it.
     if len(iterable) < 1:
         return "NA"
     else:
@@ -26,7 +26,7 @@ def target_number(iterable, targetvalue):
                 count = count + 1
         return count
 
-def target_percentile(iterable, targetvalue):
+def target_percentile(iterable, targetvalue): # calculate the percent of bacteria that is greater than the target value
     if len(iterable) < 1:
         return "NA"
     else:
@@ -51,35 +51,23 @@ def stv(iterable):
         eq = 10 ** (st.mean(b) + (1.282 * st.stdev(b)))
         return round(eq,1)
 
-def geomean(iterable):
+def geomean(iterable): # Geometric mean
     if len(iterable) < 5:
         return "NA"
     else:
         return round(float(gmean(iterable)),1)
 
-def maxvalue(iterable):
+def maxvalue(iterable): # max value of the list
     if len(iterable) < 2:
         return 'NA'
     else:
         return round(float(max(iterable)),2)
 
-def minvalue(iterable):
+def minvalue(iterable): # min value of the list
     if len(iterable) < 2:
         return 'NA'
     else:
         return round(float(min(iterable)),2)
-
-def gm_percentile(iterable, targetvalue):
-    if len(iterable) < 1:
-        return "NA"
-    else:
-        count = 0
-        for i in iterable:
-            if i <= targetvalue:
-                count = count + 1
-        totallist = len(iterable)
-        return round((count / totallist) * 100, 1)
-
 
 # Create a list of lists for the bacteria, location, month, etc
 LIST = []
@@ -196,31 +184,7 @@ exportingdata = pd.DataFrame(columns=["Location", "Bacteria", "Target Value for 
                                       "Low of Dry Samples", "High of Dry Samples",
                                       "Low of Wet Samples","High of Wet Samples"])
 
-"""
-# Excel Sheet made from function
-PWDdata = pd.read_excel(r'/Users/saffron/Documents/Water Research/2021 Data/2021datawithNOAARainFall.xlsx')
-#### Create a pandas dataframe
-df = pd.DataFrame(PWDdata)
 
-
-# Make a list of only the unique locations and bacteria types
-LocationList = df['Location'].unique().tolist()
-BacteriaList = df['Bacteria'].unique().tolist()
-
-print('Location List:\n', LocationList)
-print('BacteriaList:\n', BacteriaList)
-
-for L in range(len(LocationList)):
-    for B in range(len(BacteriaList)):
-        makingdatasheet(BacteriaList[B], LocationList[L])
-
-"""
-
-
-# Excel Sheet made from function
-#DRBCdata = pd.read_excel(r'/Users/saffron/Documents/Water Research/DRBC 2019,2020,2021/DRBC 19,20,21.xlsx')
-#PWDdata = pd.read_excel(r'/Users/saffron/Documents/Water Research/PWD Data With Rainfall/PWD2019Data_Rainfall.xlsx')
-#Summerdata = pd.read_excel(r'/Users/saffron/Documents/Water Research/Summer Data Sampling/Summer2021Data_Rainfall.xlsx')
 AllData = pd.read_excel(r'/Users/saffron/Documents/Water Research/All Data.xlsx')
 #### Create a pandas dataframe
 df = pd.DataFrame(AllData)
@@ -232,30 +196,9 @@ BacteriaList = df['Bacteria'].unique().tolist()
 print('Location List:\n', LocationList)
 print('BacteriaList:\n', BacteriaList)
 
-for L in range(len(LocationList)):
-    for B in range(len(BacteriaList)):
-        makingdatasheet(BacteriaList[B], LocationList[L])
-
-
-
-"""
-# Excel Sheet made from function
-Centraldata = pd.read_excel(r'/Users/saffron/PycharmProjects/PythonProject1/RawCentralChanneldataWithRainFall.xlsx')
-#### Create a pandas dataframe
-df = pd.DataFrame(Centraldata)
-
-# Make a list of only the unique locations and bacteria types
-LocationList = df['Location'].unique().tolist()
-BacteriaList = df['Bacteria'].unique().tolist()
-
-print('Location List:\n', LocationList)
-print('BacteriaList:\n', BacteriaList)
-
-for L in range(len(LocationList)):
-    for B in range(len(BacteriaList)):
-        makingdatasheet(BacteriaList[B], LocationList[L], 'Central Channel')
-
-"""
+for L in range(len(LocationList)): #loops through all the unique location
+    for B in range(len(BacteriaList)): #loops through all the unique bacteria
+        makingdatasheet(BacteriaList[B], LocationList[L]) # runs it through the function
 
 
 exportingdata = exportingdata.append(pd.DataFrame(LIST, columns=exportingdata.columns))
