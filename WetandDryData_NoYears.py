@@ -1,5 +1,6 @@
 # Saffron Livaccari
 # Email saffron.livaccari@gmail.com for inquiries.
+# Only need to add in the excel file at the end of the code, line 189.
 
 import pandas as pd
 import numpy as np
