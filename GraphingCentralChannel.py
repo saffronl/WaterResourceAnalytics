@@ -97,34 +97,6 @@ ax.set_ylabel(bacteria+' concentration (CFU/100mL)',weight='bold')
 
 ax2.plot(*zip(*sorted(riverpercent_dict.items())),color='red',marker = 'o')
 
-""" FOR FECAL and ECOLI
-ax2.annotate(str(riverpercent_dict[71.0]),xy=(71.0,riverpercent_dict[71.0]-5), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[74.9]),xy=(74.9-1,riverpercent_dict[74.9]-6), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[78.1]),xy=(78.1-1,riverpercent_dict[78.1]-6), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[84.0]),xy=(84.0-2,riverpercent_dict[84.0]-5), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[87.5]),xy=(87.5-1,riverpercent_dict[87.5]-6), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[93.2]),xy=(93.2-1,riverpercent_dict[93.2]-6), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[100.2]),xy=(100.2-2,riverpercent_dict[100.2]-5), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[104.75]),xy=(104.75,riverpercent_dict[104.75]-5), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[110.7]),xy=(110.7-2,riverpercent_dict[110.7]-5), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[117.8]),xy=(117.8-2,riverpercent_dict[117.8]-5), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[122.4]),xy=(122.4-2,riverpercent_dict[122.4]-5), fontsize='9',rotation=45)
-"""
-
-""" FOR ENTEROCOCCI
-ax2.annotate(str(riverpercent_dict[71.0]),xy=(71.0,riverpercent_dict[71.0]-5), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[74.9]),xy=(74.9-1,riverpercent_dict[74.9]-6), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[78.1]),xy=(78.1-1,riverpercent_dict[78.1]-6), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[84.0]),xy=(84.0-2,riverpercent_dict[84.0]-5), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[87.5]),xy=(87.5-1,riverpercent_dict[87.5]-6), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[93.2]),xy=(93.2-1,riverpercent_dict[93.2]-6), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[100.2]),xy=(100.2-2,riverpercent_dict[100.2]-5), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[104.75]),xy=(104.75-2,riverpercent_dict[104.75]-5), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[110.7]),xy=(110.7-2,riverpercent_dict[110.7]-5), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[117.8]),xy=(117.8-2,riverpercent_dict[117.8]-5), fontsize='9',rotation=45)
-ax2.annotate(str(riverpercent_dict[122.4]),xy=(122.4-2,riverpercent_dict[122.4]-5), fontsize='9',rotation=45)
-"""
-
 ax2.annotate(str(riverpercent_dict[71.0]),xy=(71.0,riverpercent_dict[71.0]-5), fontsize='9',rotation=45)
 ax2.annotate(str(riverpercent_dict[74.9]),xy=(74.9-1,riverpercent_dict[74.9]-6), fontsize='9',rotation=45)
 ax2.annotate(str(riverpercent_dict[78.1]),xy=(78.1-1,riverpercent_dict[78.1]-6), fontsize='9',rotation=45)
