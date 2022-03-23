@@ -64,6 +64,17 @@ AddingRainData.py
   <li>The data is saved down to an excel file.</li>
 </ul>
 
+WetandDryData_NoYear.py
+<ul>
+  <li><b>This is my most improtant script for this project.</b></li>
+  <li>Only need to input the excel file.</b></li>
+  <li>
+  This file will calculae the STV, the GeoMean, the Max Value, Min Value, percentiles, and target percentiles. There is a looping function that will take in the location and bacteria for each calculation.
+  </li>
+  <li>Each list that is created from above is added as a row to a pandas dataframe.</li>
+  <li>This dataframe is then exported into an excel sheet.</li>
+</ul>
+
 Graphing BoxPlot.py
 <ul>
   <li>Takes the excel file created in AddingRainData.py and creates two boxplots for rain between 0 and .1 , and .1 to max rain.</li>
