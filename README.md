@@ -74,16 +74,6 @@ Graphing BoxPlot.py
   <li>(x, y = stats.ttest_ind(list[0], list[1])) This line conducts the T Test.</li>
 </ul>
 
-Graphing Histograms.py
-<ul>
-  <li></li>
-</ul>
-
-GraphingGeoMean.py
-<ul>
-  <li></li>
-</ul>
-
 DistributionTests.py
 <ul>
   <li>Read in your excel sheet (PWD or DRBC excel file)</li>
@@ -92,11 +82,6 @@ DistributionTests.py
   <li>Next, (for k in Data:) will create a list of all data values in the rows selected previously</li>
   <li>(for i in list_of_dists:) will run through the lists of distributions and fit the data list (created previously) to each distribution.</li>
   <li>(results.sort) will sort the p and statistic number to the lowest p and highest statistic number.</li>
-</ul>
-
-Histograms for Total Rainfall in Philly.py
-<ul>
-  <li></li>
 </ul>
 
 T-Test.py
