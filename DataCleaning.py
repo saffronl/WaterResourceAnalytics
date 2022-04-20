@@ -7,7 +7,7 @@ import numpy as np
 """
 ##### This script is meant to clean up a CSV data sheet
 
-Written for KoBold Metals, by Saffron Livaccari
+Written by Saffron Livaccari
 April 14th, 2022
 """
 
